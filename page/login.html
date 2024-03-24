@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags untuk mengatur karakter set, kompatibilitas browser, dan viewport -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Mengimpor CSS animasi dan file login.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css" />
+    <link rel="stylesheet" href="../css/login.css" />
+    <!-- Judul halaman -->
+    <title>Login page</title>
+    <!-- Memasukkan library SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+</head>
+<body>
+<!-- Container untuk menempatkan konten -->
+<div class="container">
+    <!-- Section untuk mengelompokkan elemen-elemen terkait login -->
+    <section class="animated bounceInLeft"> <!-- Animasi menggunakan animate.css -->
+        <!-- Div untuk kontainer elemen-elemen login -->
+        <div class="login-container">
+            <!-- Paragraf sebagai judul halaman login -->
+            <p class="title">Login</p>
+            <!-- Garis pemisah -->
+            <div class="separator"></div>
+            <!-- Paragraf untuk pesan selamat datang -->
+            <p class="form-message">
+                Selamat Datang dan Salam Kenal.
+            </p>
+
+            <!-- Form untuk login -->
+            <form class="login-form">
+                <!-- Input untuk username -->
+                <div class="form-control">
+                    <input
+                            id="user"
+                            type="text"
+                            placeholder="username"
+                            required
+                    />
+                </div>
+                <!-- Input untuk password -->
+                <div class="form-control">
+                    <input
+                            id="password"
+                            type="password"
+                            placeholder="password"
+                            required
+                    />
+                </div>
+
+                <!-- Tombol untuk login -->
+                <button class="submit" type="button" onclick="auth()">Login</button>
+            </form>
+        </div>
+    </section>
+</div>
+
+<!-- Script JavaScript -->
+<script>
+    // Fungsi untuk autentikasi
+    function auth() {
+        // Menampilkan notifikasi menggunakan SweetAlert2
+        Swal.fire({
+            title: "Success!", // Judul notifikasi
+            text: "Login Berhasil", // Pesan dalam notifikasi
+            icon: "success", // Jenis ikon notifikasi (dalam hal ini, ikon sukses)
+            showConfirmButton: false, // Tidak menampilkan tombol OK
+            timer: 1500 // Durasi tampilan notifikasi dalam milidetik (misalnya, 1500ms = 1,5 detik)
+        }).then(() => {
+            // Setelah notifikasi ditutup, arahkan ke halaman "home.html"
+            window.location.assign("home.html");
+        });
+    }
+</script>
+</body>
+</html>

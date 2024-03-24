@@ -1,0 +1,363 @@
+/* Import Google Fonts Montserrat dengan berat yang ditentukan */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap");
+
+/* Gaya untuk tombol menu */
+.menu-btn {
+  position: absolute; /* Diposisikan relatif terhadap leluhur yang terdekat */
+  z-index: 3; /* Memastikan tombol muncul di atas elemen lain */
+  right: 35px; /* Posisi dari sisi kanan */
+  top: 35px; /* Posisi dari atas */
+  cursor: pointer; /* Ganti gaya kursor menjadi tanda penunjuk saat dihover */
+  transition: all 0.5s ease-out; /* Transisi halus untuk semua properti */
+}
+
+/* Gaya untuk garis pada tombol menu */
+.menu-btn .btn-line {
+  width: 28px; /* Lebar garis */
+  height: 3px; /* Tinggi garis */
+  margin: 0 0 5px 0; /* Margin untuk penataan */
+  background: #fff; /* Warna latar belakang untuk garis */
+  transition: all 0.5s ease-out; /* Transisi halus untuk semua properti */
+}
+
+/* Gaya untuk tombol menu dalam keadaan tertutup */
+.menu-btn.close {
+  transform: rotate(180deg); /* Memutar tombol untuk membuat bentuk X */
+}
+
+.menu-btn.close .btn-line:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px); /* Posisi diagonal untuk garis */
+}
+
+.menu-btn.close .btn-line:nth-child(2) {
+  opacity: 0; /* Menyembunyikan garis tengah */
+}
+
+.menu-btn.close .btn-line:nth-child(3) {
+  transform: rotate(-45deg) translate(6.5px, -6.5px); /* Posisi diagonal untuk garis */
+}
+
+/* Gaya untuk menu */
+.menu {
+  position: fixed; /* Posisi tetap terlepas dari pengguliran */
+  top: 0; /* Posisi dari atas */
+  width: 100%; /* Lebar penuh viewport */
+  visibility: hidden; /* Awalnya tersembunyi */
+}
+
+.menu.show {
+  visibility: visible; /* Menampilkan menu */
+}
+
+/* Gaya untuk bagian branding dan navigasi dari menu */
+.menu-branding,
+.menu-nav {
+  display: flex; /* Elemen ditampilkan sebagai flexbox */
+  flex-flow: column wrap; /* Tata letak kolom */
+  align-items: center; /* Pusatkan penataan secara horizontal */
+  justify-content: center; /* Pusatkan penataan secara vertikal */
+  float: left; /* Mengapung ke kiri */
+  width: 50%; /* Menempati separuh lebar viewport */
+  height: 100vh; /* Tinggi penuh viewport */
+  overflow: hidden; /* Sembunyikan konten yang meluap */
+}
+
+/* Gaya untuk navigasi */
+.menu-nav {
+  margin: 0; /* Hapus margin default */
+  padding: 0; /* Hapus padding default */
+  background: rgba(15, 15, 15, 0.9); /* Warna latar belakang dengan kejelasan */
+  list-style: none; /* Hapus gaya default daftar */
+  transform: translate3d(0, -100%, 0); /* Awalnya di luar layar */
+  transition: all 0.5s ease-out; /* Transisi halus untuk semua properti */
+}
+
+.menu-nav.show {
+  transform: translate3d(0, 0, 0); /* Menampilkan navigasi */
+}
+
+/* Gaya untuk branding */
+.menu-branding {
+  background: rgba(22, 22, 22, 0.9); /* Warna latar belakang dengan kejelasan */
+  transform: translate3d(0, 100%, 0); /* Awalnya di luar layar */
+  transition: all 0.5s ease-out; /* Transisi halus untuk semua properti */
+}
+
+.menu-branding.show {
+  transform: translate3d(0, 0, 0); /* Menampilkan branding */
+}
+
+/* Gaya untuk potret */
+.menu-branding .portrait {
+  width: 250px; /* Lebar potret */
+  height: 250px; /* Tinggi potret */
+  background: url("../img/pp.jpg"); /* Gambar latar belakang */
+  border-radius: 50%; /* Membuat bentuk lingkaran */
+  border: solid 3px #0d1117; /* Gaya garis tepi */
+}
+
+/* Gaya untuk elemen navigasi */
+.menu .nav-item {
+  transform: translate3d(600px, 0, 0); /* Awalnya di luar layar */
+  transition: all 0.5s ease-out; /* Transisi halus untuk semua properti */
+}
+
+.menu .nav-item.show {
+  transform: translate3d(0, 0, 0); /* Menampilkan elemen navigasi */
+}
+
+.menu .nav-item.current > a {
+  color: #ff9148; /* Warna untuk elemen navigasi saat ini */
+}
+
+/* Gaya untuk tautan navigasi */
+.menu .nav-link {
+  display: inline-block; /* Ditampilkan sebagai blok inline */
+  position: relative; /* Posisi relatif terhadap posisi normalnya */
+  font-size: 37px; /* Ukuran font untuk tautan navigasi */
+  text-transform: uppercase; /* Mengubah teks menjadi huruf besar */
+  padding: 1rem 0; /* Padding untuk atas dan bawah */
+  font-weight: 300; /* Ketebalan font */
+  color: #fff; /* Warna teks */
+  text-decoration: none; /* Hapus dekorasi teks default */
+  transition: all 0.5s ease-out; /* Transisi halus untuk semua properti */
+}
+
+.menu .nav-link:hover {
+  transform: scale(1.1); /* Efek penskalaan saat dihover */
+}
+
+/* Transisi tertunda untuk setiap elemen navigasi */
+.nav-item:nth-child(1) {
+  transition-delay: 0.1s;
+}
+
+.nav-item:nth-child(2) {
+  transition-delay: 0.2s;
+}
+
+.nav-item:nth-child(3) {
+  transition-delay: 0.3s;
+}
+
+.nav-item:nth-child(4) {
+  transition-delay: 0.4s;
+}
+
+/* Penentuan kotak untuk semua elemen */
+* {
+  box-sizing: border-box;
+}
+
+/* Gaya untuk body */
+body {
+  background: #0d1117; /* Warna latar belakang */
+  background-image: linear-gradient(to bottom right, #0d1117, #161b21); /* Latar belakang gradien */
+  color: #fff; /* Warna teks */
+  height: 100%; /* Tinggi penuh viewport */
+  margin: 0; /* Menghapus margin default */
+  font-family: "Montserrat", sans-serif; /* Keluarga font */
+  line-height: 1.5; /* Tinggi baris */
+}
+
+/* Gaya untuk heading */
+h1,
+h2,
+h3 {
+  margin: 0; /* Menghapus margin default */
+  font-weight: 400; /* Ketebalan font */
+}
+
+#home h1.lg-heading {
+  font-weight: 700; /* Ketebalan font untuk heading besar */
+}
+
+h1.lg-heading,
+h2.lg-heading,
+h3.lg-heading {
+  font-size: 5rem; /* Ukuran font untuk heading besar */
+  font-weight: 600; /* Ketebalan font untuk heading besar */
+}
+
+/* Gaya untuk heading kecil dengan warna span tertentu */
+#home h2.sm-heading span {
+  color: #ff9148; /* Warna untuk span */
+}
+
+h1.sm-heading,
+h2.sm-heading,
+h3.sm-heading {
+  margin-bottom: 2rem; /* Margin bawah */
+  padding: 0.2rem 1rem; /* Padding */
+  background: rgba(73, 73, 73, 0.5); /* Latar belakang dengan kejelasan */
+}
+
+/* Gaya untuk tautan */
+a {
+  color: #fff; /* Warna teks */
+  text-decoration: none; /* Hapus dekorasi teks */
+}
+
+/* Gaya untuk header */
+header {
+  position: fixed; /* Posisi tetap */
+  z-index: 2; /* Z-index */
+  width: 100%; /* Lebar penuh */
+}
+
+/* Gaya untuk konten utama */
+main {
+  padding: 4rem; /* Padding */
+  min-height: calc(100vh - 60px); /* Tinggi minimum */
+}
+
+main#home {
+  overflow: hidden; /* Pengguliran tersembunyi */
+}
+
+main#home h1 {
+  margin-top: 20vh; /* Margin atas */
+}
+
+/* Gaya untuk informasi tentang penulis */
+.about-info {
+  display: grid; /* Ditampilkan sebagai grid */
+  grid-gap: 30px; /* Celah grid */
+  grid-template-areas: "bioimage exp exp" "bio1 bio2 bio3"; /* Penataan area grid */
+  grid-template-columns: repeat(3, 1fr); /* Lebar kolom grid */
+}
+
+.about-info .bio-image {
+  grid-area: bioimage; /* Area grid */
+  margin: auto; /* Margin otomatis */
+  border-radius: 50%; /* Border-radius untuk lingkaran */
+  border: #161b21 3px solid; /* Gaya border */
+}
+
+.about-info .exp span {
+  color: #ff9148; /* Warna untuk span di dalam .exp */
+}
+
+.about-info .bio span {
+  color: #ff9148; /* Warna untuk span di dalam .bio */
+}
+
+.about-info .exp {
+  grid-area: exp; /* Area grid */
+  font-size: 1.5rem; /* Ukuran font */
+}
+
+.about-info .bio-1 {
+  grid-area: bio1; /* Area grid */
+}
+
+.about-info .bio-2 {
+  grid-area: bio2; /* Area grid */
+}
+
+.about-info .bio-3 {
+  grid-area: bio3; /* Area grid */
+}
+
+.about-info .bio {
+  background: #515151; /* Warna latar belakang */
+  padding: 0.5rem; /* Padding */
+  border-bottom: #0d1117 5px solid; /* Border bawah */
+}
+/* Gaya untuk kotak-kotak */
+.boxes {
+  display: flex; /* Menampilkan kotak-kotak sebagai flexbox */
+  flex-wrap: wrap; /* Mengatur agar kotak-kotak bisa wrap ke baris berikutnya */
+  justify-content: space-evenly; /* Menyusun kotak-kotak dengan ruang yang merata */
+  align-items: center; /* Mengatur agar item di dalam kotak-kotak berada di tengah secara vertikal */
+  margin-top: 1rem; /* Margin atas */
+}
+
+/* Gaya untuk div dalam kotak-kotak */
+.boxes div {
+  font-size: 2rem; /* Ukuran font */
+  border: 3px #fff solid; /* Gaya border */
+  padding: 1.5rem 2.5rem; /* Padding */
+  margin-bottom: 3rem; /* Margin bawah */
+  transition: all 0.5s ease-out; /* Transisi halus untuk semua properti */
+}
+
+/* Efek hover untuk div dalam kotak-kotak */
+.boxes div:hover {
+  padding: 0.5rem 1.5rem; /* Padding saat dihover */
+  background: #0d1117; /* Warna latar belakang saat dihover */
+  color: #ff9148; /* Warna teks saat dihover */
+}
+
+/* Efek hover untuk span di dalam div dalam kotak-kotak */
+.boxes div:hover span {
+  color: #fff; /* Warna span saat dihover */
+}
+
+/* Media query untuk layar berukuran maksimum 768px */
+@media screen and (max-width: 768px) {
+  main {
+    align-items: center; /* Penataan item utama di tengah secara vertikal */
+    text-align: center; /* Penataan teks menjadi tengah */
+  }
+  main .lg-heading {
+    line-height: 1; /* Tinggi baris */
+    margin-bottom: 1rem; /* Margin bawah */
+  }
+  ul.menu-nav,
+  div.menu-branding {
+    float: none; /* Membatalkan float */
+    width: 100%; /* Lebar penuh */
+    min-height: 0; /* Tinggi minimum */
+  }
+  ul.menu-nav.show,
+  div.menu-branding.show {
+    transform: translate3d(0, 0, 0); /* Menampilkan menu-nav dan menu-branding */
+  }
+  .menu-nav {
+    height: 75vh; /* Tinggi */
+    transform: translate3d(-100%, 0, 0); /* Memindahkan menu-nav keluar layar */
+    font-size: 24px; /* Ukuran font */
+  }
+  .menu-branding {
+    height: 25vh; /* Tinggi */
+    transform: translate3d(100%, 0, 0); /* Memindahkan menu-branding keluar layar */
+  }
+  .menu-branding .portrait {
+    background: url("../img/pf.jpg"); /* Gambar latar belakang */
+    width: 150px; /* Lebar */
+    height: 150px; /* Tinggi */
+  }
+  #home h1.lg-heading {
+    font-size: 1.8rem; /* Ukuran font */
+    font-weight: 800; /* Ketebalan font */
+    padding-bottom: 1rem; /* Padding bawah */
+  }
+  #home .sm-heading {
+    font-size: 1.2rem; /* Ukuran font */
+  }
+  .about-info {
+    grid-template-areas: "bioimage" "exp" "bio1" "bio2" "bio3"; /* Penataan area grid */
+    grid-template-columns: 1fr; /* Satu kolom */
+  }
+  .about-info .exp {
+    font-size: 1.2rem; /* Ukuran font */
+  }
+  .boxes div {
+    font-size: 1rem; /* Ukuran font */
+  }
+}
+
+/* Media query untuk layar berukuran maksimum 500px */
+@media screen and (max-width: 500px) {
+  main {
+    padding: 2rem; /* Padding */
+  }
+  main #home h1 {
+    margin-top: 10vh; /* Margin atas */
+  }
+  main .lg-heading {
+    margin-top: 1rem; /* Margin atas */
+    font-size: 5rem; /* Ukuran font */
+  }
+}

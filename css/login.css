@@ -1,0 +1,134 @@
+/* Mengimpor font Montserrat dari Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap");
+
+/* Reset default styling */
+* {
+  box-sizing: border-box; /* Menghindari masalah padding dan border */
+  margin: 0; /* Hilangkan margin default */
+  padding: 0; /* Hilangkan padding default */
+  font-family: "Montserrat", sans-serif; /* Gunakan font Montserrat */
+}
+
+/* Animasi latar belakang */
+@keyframes animatedBackground {
+  from {
+    background-position: 0 0%; /* Mulai dari posisi latar belakang awal */
+  }
+  to {
+    background-position: 150% 150%; /* Pindah ke posisi latar belakang akhir */
+  }
+}
+
+/* Tata letak halaman */
+body {
+  min-height: 100vh; /* Set tinggi minimum body sesuai viewport */
+  width: 100%; /* Gunakan lebar penuh */
+  background-image: url('../img/cornered-stairs.svg'); /* Gunakan gambar latar belakang */
+  background-size: cover; /* Atur ukuran latar belakang agar menutupi seluruh halaman */
+  background-position: center; /* Pusatkan latar belakang */
+  background-repeat: no-repeat; /* Hindari pengulangan latar belakang */
+  display: flex; /* Gunakan flexbox */
+  justify-content: center; /* Pusatkan konten secara horizontal */
+  align-items: center; /* Pusatkan konten secara vertikal */
+  animation: animatedBackground 20s linear infinite; /* Terapkan animasi latar belakang */
+}
+
+/* Frame container */
+.container {
+  max-width: 450px; /* Atur lebar maksimum container */
+  padding: 24px; /* Berikan padding di dalam container */
+  border-radius: 10px; /* Atur radius sudut untuk frame */
+  background: #000000ab; /* Gunakan warna latar belakang dengan transparansi */
+  box-shadow: 0 0 20px 0 rgba(116, 72, 72, 0.7); /* Tambahkan efek bayangan untuk frame */
+}
+
+/* Tata letak konten */
+section {
+  display: flex; /* Gunakan flexbox */
+  justify-content: center; /* Pusatkan konten secara horizontal */
+  align-items: center; /* Pusatkan konten secara vertikal */
+}
+
+/* Kontainer login */
+.login-container {
+  max-width: 450px; /* Atur lebar maksimum kontainer */
+  padding: 24px; /* Berikan padding di dalam kontainer */
+  display: flex; /* Gunakan flexbox */
+  flex-direction: column; /* Atur tata letak menjadi kolom */
+  align-items: center; /* Pusatkan konten secara vertikal */
+}
+
+/* Judul */
+.title {
+  text-transform: uppercase; /* Ubah teks menjadi huruf besar */
+  font-size: 3rem; /* Atur ukuran font */
+  font-weight: bold; /* Atur ketebalan font */
+  text-align: center; /* Pusatkan teks */
+  letter-spacing: 1px; /* Atur jarak antar huruf */
+  color: #fbcd02; /* Atur warna teks */
+}
+
+/* Pesan formulir */
+.form-message {
+  text-align: center; /* Pusatkan teks */
+  font-size: 1.1rem; /* Atur ukuran font */
+  line-height: 28px; /* Atur ketinggian baris */
+  margin-bottom: 30px; /* Berikan margin bawah */
+  color: #696969; /* Atur warna teks */
+}
+
+/* Formulir login */
+.login-form {
+  width: 100%; /* Gunakan lebar penuh */
+  display: flex; /* Gunakan flexbox */
+  flex-direction: column; /* Atur tata letak menjadi kolom */
+}
+
+/* Kontrol formulir */
+.form-control {
+  width: 100%; /* Gunakan lebar penuh */
+  position: relative; /* Atur posisi relatif */
+  margin-bottom: 24px; /* Berikan margin bawah */
+}
+
+/* Gaya input dan tombol */
+input,
+button {
+  border: none; /* Hilangkan garis tepi */
+  outline: none; /* Hilangkan garis luar */
+  border-radius: 30px; /* Atur radius sudut */
+  font-size: 1.1em; /* Atur ukuran font */
+}
+
+/* Gaya input */
+input {
+  width: 100%; /* Gunakan lebar penuh */
+  background: #e6e6e6; /* Atur warna latar belakang */
+  color: #333; /* Atur warna teks */
+  letter-spacing: 0.5px; /* Atur jarak antar huruf */
+  padding: 15px 30px; /* Berikan padding */
+}
+
+/* Gaya tombol submit */
+button.submit {
+  color: #fff; /* Atur warna teks */
+  padding: 14px 64px; /* Berikan padding */
+  margin: 32px auto; /* Atur margin */
+  text-transform: uppercase; /* Ubah teks menjadi huruf besar */
+  letter-spacing: 2px; /* Atur jarak antar huruf */
+  font-weight: bold; /* Atur ketebalan font */
+  background-image: linear-gradient(to bottom right, #f79d0c, #ffa600); /* Atur latar belakang menggunakan gradien */
+  cursor: pointer; /* Ubah kursor saat mengarahkan */
+  transition: opacity 0.4s; /* Efek transisi saat hover */
+}
+
+/* Efek hover pada tombol submit */
+button.submit:hover {
+  opacity: 0.9; /* Ubah opasitas saat dihover */
+}
+
+/* ----  Responsiveness   ----  */
+@media (max-width: 780px) {
+  /* Media query untuk tata letak responsif pada lebar layar 780px */
+  /* Contoh: Anda dapat menambahkan aturan CSS tambahan di sini untuk menangani tata letak pada perangkat dengan lebar layar yang lebih kecil */
+}
